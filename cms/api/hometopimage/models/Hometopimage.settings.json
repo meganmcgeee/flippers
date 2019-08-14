@@ -1,0 +1,20 @@
+{
+  "connection": "default",
+  "collectionName": "hometopimages",
+  "info": {
+    "name": "hometopimage",
+    "description": "This is the main image on the home page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "homeheaderimage": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

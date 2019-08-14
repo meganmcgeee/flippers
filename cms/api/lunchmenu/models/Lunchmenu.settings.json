@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "lunchmenus",
+  "info": {
+    "name": "lunchmenu",
+    "description": "Here is the lunch menu."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "dish": {
+      "type": "string"
+    },
+    "dishdescription": {
+      "type": "text"
+    }
+  }
+}

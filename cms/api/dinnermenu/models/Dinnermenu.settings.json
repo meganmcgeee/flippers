@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "dinnermenus",
+  "info": {
+    "name": "dinnermenu",
+    "description": "Here is the dinner menu."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "dish": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

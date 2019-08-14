@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/hometopimages",
+      "handler": "Hometopimage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hometopimages/count",
+      "handler": "Hometopimage.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/hometopimages/:id",
+      "handler": "Hometopimage.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/hometopimages",
+      "handler": "Hometopimage.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/hometopimages/:id",
+      "handler": "Hometopimage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/hometopimages/:id",
+      "handler": "Hometopimage.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dinnermenus",
+      "handler": "Dinnermenu.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dinnermenus/count",
+      "handler": "Dinnermenu.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dinnermenus/:id",
+      "handler": "Dinnermenu.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dinnermenus",
+      "handler": "Dinnermenu.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dinnermenus/:id",
+      "handler": "Dinnermenu.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dinnermenus/:id",
+      "handler": "Dinnermenu.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
