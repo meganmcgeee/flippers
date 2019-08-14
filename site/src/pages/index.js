@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 // import { Jumbotron, Button } from 'react-bootstrap';
 import Layout from '../components/layout'
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
       ))}
     </ul>
     {/* https://www.gatsbyjs.org/packages/gatsby-image/ */}
-    <Img fixed={data.file.childImageSharp.fixed} />
+    {/* <Img fixed={data.file.childImageSharp.fixed} /> */}
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
