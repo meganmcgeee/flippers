@@ -30,6 +30,14 @@ type createLunchmenuPayload {
   lunchmenu: Lunchmenu
 }
 
+input createMenuphotobannerInput {
+  data: MenuphotobannerInput
+}
+
+type createMenuphotobannerPayload {
+  menuphotobanner: Menuphotobanner
+}
+
 input createRoleInput {
   data: RoleInput
 }
@@ -81,6 +89,14 @@ input deleteLunchmenuInput {
 
 type deleteLunchmenuPayload {
   lunchmenu: Lunchmenu
+}
+
+input deleteMenuphotobannerInput {
+  where: InputID
+}
+
+type deleteMenuphotobannerPayload {
+  menuphotobanner: Menuphotobanner
 }
 
 input deleteRoleInput {
@@ -145,6 +161,12 @@ input editLunchmenuInput {
   dish: String
   dishdescription: String
   dishprice: String
+}
+
+input editMenuphotobannerInput {
+  image1: ID
+  image2: ID
+  image3: ID
 }
 
 input editRoleInput {
@@ -230,7 +252,22 @@ input LunchmenuInput {
   dishprice: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+type Menuphotobanner {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  image1: UploadFile
+  image2: UploadFile
+  image3: UploadFile
+}
+
+input MenuphotobannerInput {
+  image1: ID
+  image2: ID
+  image3: ID
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createDinnermenu(input: createDinnermenuInput): createDinnermenuPayload
@@ -245,6 +282,9 @@ type Mutation {
   createLunchmenu(input: createLunchmenuInput): createLunchmenuPayload
   updateLunchmenu(input: updateLunchmenuInput): updateLunchmenuPayload
   deleteLunchmenu(input: deleteLunchmenuInput): deleteLunchmenuPayload
+  createMenuphotobanner(input: createMenuphotobannerInput): createMenuphotobannerPayload
+  updateMenuphotobanner(input: updateMenuphotobannerInput): updateMenuphotobannerPayload
+  deleteMenuphotobanner(input: deleteMenuphotobannerInput): deleteMenuphotobannerPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -275,6 +315,8 @@ type Query {
   hometopimages(sort: String, limit: Int, start: Int, where: JSON): [Hometopimage]
   lunchmenu(id: ID!): Lunchmenu
   lunchmenus(sort: String, limit: Int, start: Int, where: JSON): [Lunchmenu]
+  menuphotobanner(id: ID!): Menuphotobanner
+  menuphotobanners(sort: String, limit: Int, start: Int, where: JSON): [Menuphotobanner]
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   role(id: ID!): UsersPermissionsRole
 
@@ -329,6 +371,15 @@ input updateLunchmenuInput {
 
 type updateLunchmenuPayload {
   lunchmenu: Lunchmenu
+}
+
+input updateMenuphotobannerInput {
+  where: InputID
+  data: editMenuphotobannerInput
+}
+
+type updateMenuphotobannerPayload {
+  menuphotobanner: Menuphotobanner
 }
 
 input updateRoleInput {
