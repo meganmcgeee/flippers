@@ -1,3 +1,6 @@
-# my-project
+# flippers cms
 
-A quick description of my-project.
+
+1. npm i
+2. npm start
+
