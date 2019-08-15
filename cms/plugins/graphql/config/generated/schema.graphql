@@ -6,6 +6,14 @@ type createDinnermenuPayload {
   dinnermenu: Dinnermenu
 }
 
+input createHomedescriptionInput {
+  data: HomedescriptionInput
+}
+
+type createHomedescriptionPayload {
+  homedescription: Homedescription
+}
+
 input createHometopimageInput {
   data: HometopimageInput
 }
@@ -49,6 +57,14 @@ input deleteDinnermenuInput {
 
 type deleteDinnermenuPayload {
   dinnermenu: Dinnermenu
+}
+
+input deleteHomedescriptionInput {
+  where: InputID
+}
+
+type deleteHomedescriptionPayload {
+  homedescription: Homedescription
 }
 
 input deleteHometopimageInput {
@@ -117,6 +133,10 @@ input editFileInput {
   related: [ID]
 }
 
+input editHomedescriptionInput {
+  description_body: String
+}
+
 input editHometopimageInput {
   homeheaderimage: ID
 }
@@ -159,6 +179,17 @@ input FileInput {
   related: [ID]
 }
 
+type Homedescription {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  description_body: String
+}
+
+input HomedescriptionInput {
+  description_body: String
+}
+
 """This is the main image on the home page"""
 type Hometopimage {
   id: ID!
@@ -199,12 +230,15 @@ input LunchmenuInput {
   dishprice: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createDinnermenu(input: createDinnermenuInput): createDinnermenuPayload
   updateDinnermenu(input: updateDinnermenuInput): updateDinnermenuPayload
   deleteDinnermenu(input: deleteDinnermenuInput): deleteDinnermenuPayload
+  createHomedescription(input: createHomedescriptionInput): createHomedescriptionPayload
+  updateHomedescription(input: updateHomedescriptionInput): updateHomedescriptionPayload
+  deleteHomedescription(input: deleteHomedescriptionInput): deleteHomedescriptionPayload
   createHometopimage(input: createHometopimageInput): createHometopimagePayload
   updateHometopimage(input: updateHometopimageInput): updateHometopimagePayload
   deleteHometopimage(input: deleteHometopimageInput): deleteHometopimagePayload
@@ -235,6 +269,8 @@ type Mutation {
 type Query {
   dinnermenu(id: ID!): Dinnermenu
   dinnermenus(sort: String, limit: Int, start: Int, where: JSON): [Dinnermenu]
+  homedescription(id: ID!): Homedescription
+  homedescriptions(sort: String, limit: Int, start: Int, where: JSON): [Homedescription]
   hometopimage(id: ID!): Hometopimage
   hometopimages(sort: String, limit: Int, start: Int, where: JSON): [Hometopimage]
   lunchmenu(id: ID!): Lunchmenu
@@ -266,6 +302,15 @@ input updateDinnermenuInput {
 
 type updateDinnermenuPayload {
   dinnermenu: Dinnermenu
+}
+
+input updateHomedescriptionInput {
+  where: InputID
+  data: editHomedescriptionInput
+}
+
+type updateHomedescriptionPayload {
+  homedescription: Homedescription
 }
 
 input updateHometopimageInput {

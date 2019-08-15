@@ -21,6 +21,7 @@ module.exports = {
           'Lunchmenus',
           'Dinnermenus',
           'Hometopimages',
+          'Homedescriptions',
           'user'
         ],
         queryLimit: 1000,
