@@ -27,6 +27,14 @@ type createDinnermenuPayload {
   dinnermenu: Dinnermenu
 }
 
+input createHomedescriptionimageInput {
+  data: HomedescriptionimageInput
+}
+
+type createHomedescriptionimagePayload {
+  homedescriptionimage: Homedescriptionimage
+}
+
 input createHomedescriptionInput {
   data: HomedescriptionInput
 }
@@ -94,6 +102,14 @@ input deleteDinnermenuInput {
 
 type deleteDinnermenuPayload {
   dinnermenu: Dinnermenu
+}
+
+input deleteHomedescriptionimageInput {
+  where: InputID
+}
+
+type deleteHomedescriptionimagePayload {
+  homedescriptionimage: Homedescriptionimage
 }
 
 input deleteHomedescriptionInput {
@@ -183,6 +199,10 @@ input editFileInput {
   related: [ID]
 }
 
+input editHomedescriptionimageInput {
+  image: ID
+}
+
 input editHomedescriptionInput {
   description_body: String
 }
@@ -240,6 +260,17 @@ type Homedescription {
   created_at: DateTime!
   updated_at: DateTime!
   description_body: String
+}
+
+type Homedescriptionimage {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  image: UploadFile
+}
+
+input HomedescriptionimageInput {
+  image: ID
 }
 
 input HomedescriptionInput {
@@ -301,7 +332,7 @@ input MenuphotobannerInput {
   image3: ID
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Abouttext | createAbouttextPayload | updateAbouttextPayload | deleteAbouttextPayload | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Abouttext | createAbouttextPayload | updateAbouttextPayload | deleteAbouttextPayload | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Homedescriptionimage | createHomedescriptionimagePayload | updateHomedescriptionimagePayload | deleteHomedescriptionimagePayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createAbouttext(input: createAbouttextInput): createAbouttextPayload
@@ -313,6 +344,9 @@ type Mutation {
   createHomedescription(input: createHomedescriptionInput): createHomedescriptionPayload
   updateHomedescription(input: updateHomedescriptionInput): updateHomedescriptionPayload
   deleteHomedescription(input: deleteHomedescriptionInput): deleteHomedescriptionPayload
+  createHomedescriptionimage(input: createHomedescriptionimageInput): createHomedescriptionimagePayload
+  updateHomedescriptionimage(input: updateHomedescriptionimageInput): updateHomedescriptionimagePayload
+  deleteHomedescriptionimage(input: deleteHomedescriptionimageInput): deleteHomedescriptionimagePayload
   createHometopimage(input: createHometopimageInput): createHometopimagePayload
   updateHometopimage(input: updateHometopimageInput): updateHometopimagePayload
   deleteHometopimage(input: deleteHometopimageInput): deleteHometopimagePayload
@@ -350,6 +384,8 @@ type Query {
   dinnermenus(sort: String, limit: Int, start: Int, where: JSON): [Dinnermenu]
   homedescription(id: ID!): Homedescription
   homedescriptions(sort: String, limit: Int, start: Int, where: JSON): [Homedescription]
+  homedescriptionimage(id: ID!): Homedescriptionimage
+  homedescriptionimages(sort: String, limit: Int, start: Int, where: JSON): [Homedescriptionimage]
   hometopimage(id: ID!): Hometopimage
   hometopimages(sort: String, limit: Int, start: Int, where: JSON): [Hometopimage]
   lunchmenu(id: ID!): Lunchmenu
@@ -392,6 +428,15 @@ input updateDinnermenuInput {
 
 type updateDinnermenuPayload {
   dinnermenu: Dinnermenu
+}
+
+input updateHomedescriptionimageInput {
+  where: InputID
+  data: editHomedescriptionimageInput
+}
+
+type updateHomedescriptionimagePayload {
+  homedescriptionimage: Homedescriptionimage
 }
 
 input updateHomedescriptionInput {
