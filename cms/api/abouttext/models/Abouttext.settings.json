@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "abouttexts",
+  "info": {
+    "name": "abouttext",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "textblock1": {
+      "type": "text"
+    },
+    "textblock2": {
+      "type": "text"
+    }
+  }
+}

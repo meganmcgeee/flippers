@@ -23,6 +23,7 @@ module.exports = {
           'Lunchmenus',
           'Dinnermenus',
           'Menuphotobanners',
+          'Abouttexts',
           'user'
         ],
         queryLimit: 1000,

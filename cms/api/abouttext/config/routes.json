@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/abouttexts",
+      "handler": "Abouttext.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/abouttexts/count",
+      "handler": "Abouttext.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/abouttexts/:id",
+      "handler": "Abouttext.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/abouttexts",
+      "handler": "Abouttext.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/abouttexts/:id",
+      "handler": "Abouttext.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/abouttexts/:id",
+      "handler": "Abouttext.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

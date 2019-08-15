@@ -1,3 +1,24 @@
+type Abouttext {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  textblock1: String
+  textblock2: String
+}
+
+input AbouttextInput {
+  textblock1: String
+  textblock2: String
+}
+
+input createAbouttextInput {
+  data: AbouttextInput
+}
+
+type createAbouttextPayload {
+  abouttext: Abouttext
+}
+
 input createDinnermenuInput {
   data: DinnermenuInput
 }
@@ -58,6 +79,14 @@ type createUserPayload {
 The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
+
+input deleteAbouttextInput {
+  where: InputID
+}
+
+type deleteAbouttextPayload {
+  abouttext: Abouttext
+}
 
 input deleteDinnermenuInput {
   where: InputID
@@ -128,6 +157,11 @@ input DinnermenuInput {
   dish: String
   description: String
   price: String
+}
+
+input editAbouttextInput {
+  textblock1: String
+  textblock2: String
 }
 
 input editDinnermenuInput {
@@ -267,9 +301,12 @@ input MenuphotobannerInput {
   image3: ID
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Abouttext | createAbouttextPayload | updateAbouttextPayload | deleteAbouttextPayload | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
+  createAbouttext(input: createAbouttextInput): createAbouttextPayload
+  updateAbouttext(input: updateAbouttextInput): updateAbouttextPayload
+  deleteAbouttext(input: deleteAbouttextInput): deleteAbouttextPayload
   createDinnermenu(input: createDinnermenuInput): createDinnermenuPayload
   updateDinnermenu(input: updateDinnermenuInput): updateDinnermenuPayload
   deleteDinnermenu(input: deleteDinnermenuInput): deleteDinnermenuPayload
@@ -307,6 +344,8 @@ type Mutation {
 }
 
 type Query {
+  abouttext(id: ID!): Abouttext
+  abouttexts(sort: String, limit: Int, start: Int, where: JSON): [Abouttext]
   dinnermenu(id: ID!): Dinnermenu
   dinnermenus(sort: String, limit: Int, start: Int, where: JSON): [Dinnermenu]
   homedescription(id: ID!): Homedescription
@@ -335,6 +374,15 @@ input RoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input updateAbouttextInput {
+  where: InputID
+  data: editAbouttextInput
+}
+
+type updateAbouttextPayload {
+  abouttext: Abouttext
 }
 
 input updateDinnermenuInput {
