@@ -1,0 +1,380 @@
+input createDinnermenuInput {
+  data: DinnermenuInput
+}
+
+type createDinnermenuPayload {
+  dinnermenu: Dinnermenu
+}
+
+input createHometopimageInput {
+  data: HometopimageInput
+}
+
+type createHometopimagePayload {
+  hometopimage: Hometopimage
+}
+
+input createLunchmenuInput {
+  data: LunchmenuInput
+}
+
+type createLunchmenuPayload {
+  lunchmenu: Lunchmenu
+}
+
+input createRoleInput {
+  data: RoleInput
+}
+
+type createRolePayload {
+  role: UsersPermissionsRole
+}
+
+input createUserInput {
+  data: UserInput
+}
+
+type createUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""
+The `DateTime` scalar represents a date and time following the ISO 8601 standard
+"""
+scalar DateTime
+
+input deleteDinnermenuInput {
+  where: InputID
+}
+
+type deleteDinnermenuPayload {
+  dinnermenu: Dinnermenu
+}
+
+input deleteHometopimageInput {
+  where: InputID
+}
+
+type deleteHometopimagePayload {
+  hometopimage: Hometopimage
+}
+
+input deleteLunchmenuInput {
+  where: InputID
+}
+
+type deleteLunchmenuPayload {
+  lunchmenu: Lunchmenu
+}
+
+input deleteRoleInput {
+  where: InputID
+}
+
+type deleteRolePayload {
+  role: UsersPermissionsRole
+}
+
+input deleteUserInput {
+  where: InputID
+}
+
+type deleteUserPayload {
+  user: UsersPermissionsUser
+}
+
+type Dinnermenu {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  dish: String
+  description: String
+  price: String
+}
+
+input DinnermenuInput {
+  dish: String
+  description: String
+  price: String
+}
+
+input editDinnermenuInput {
+  dish: String
+  description: String
+  price: String
+}
+
+input editFileInput {
+  name: String
+  hash: String
+  sha256: String
+  ext: String
+  mime: String
+  size: String
+  url: String
+  provider: String
+  public_id: String
+  related: [ID]
+}
+
+input editHometopimageInput {
+  homeheaderimage: ID
+}
+
+input editLunchmenuInput {
+  dish: String
+  dishdescription: String
+  dishprice: String
+}
+
+input editRoleInput {
+  name: String
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input editUserInput {
+  username: String
+  email: String
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+input FileInput {
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related: [ID]
+}
+
+"""This is the main image on the home page"""
+type Hometopimage {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  homeheaderimage: UploadFile
+}
+
+input HometopimageInput {
+  homeheaderimage: ID
+}
+
+input InputID {
+  id: ID!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""The `Long` scalar type represents 52-bit integers"""
+scalar Long
+
+"""Here is the lunch menu."""
+type Lunchmenu {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  dish: String
+  dishdescription: String
+  dishprice: String
+}
+
+input LunchmenuInput {
+  dish: String
+  dishdescription: String
+  dishprice: String
+}
+
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+
+type Mutation {
+  createDinnermenu(input: createDinnermenuInput): createDinnermenuPayload
+  updateDinnermenu(input: updateDinnermenuInput): updateDinnermenuPayload
+  deleteDinnermenu(input: deleteDinnermenuInput): deleteDinnermenuPayload
+  createHometopimage(input: createHometopimageInput): createHometopimagePayload
+  updateHometopimage(input: updateHometopimageInput): updateHometopimagePayload
+  deleteHometopimage(input: deleteHometopimageInput): deleteHometopimagePayload
+  createLunchmenu(input: createLunchmenuInput): createLunchmenuPayload
+  updateLunchmenu(input: updateLunchmenuInput): updateLunchmenuPayload
+  deleteLunchmenu(input: deleteLunchmenuInput): deleteLunchmenuPayload
+
+  """Create a new role"""
+  createRole(input: createRoleInput): createRolePayload
+
+  """Update an existing role"""
+  updateRole(input: updateRoleInput): updateRolePayload
+
+  """Delete an existing role"""
+  deleteRole(input: deleteRoleInput): deleteRolePayload
+
+  """Create a new user"""
+  createUser(input: createUserInput): createUserPayload
+
+  """Update an existing user"""
+  updateUser(input: updateUserInput): updateUserPayload
+
+  """Delete an existing user"""
+  deleteUser(input: deleteUserInput): deleteUserPayload
+  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!
+}
+
+type Query {
+  dinnermenu(id: ID!): Dinnermenu
+  dinnermenus(sort: String, limit: Int, start: Int, where: JSON): [Dinnermenu]
+  hometopimage(id: ID!): Hometopimage
+  hometopimages(sort: String, limit: Int, start: Int, where: JSON): [Hometopimage]
+  lunchmenu(id: ID!): Lunchmenu
+  lunchmenus(sort: String, limit: Int, start: Int, where: JSON): [Lunchmenu]
+  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  role(id: ID!): UsersPermissionsRole
+
+  """
+  Retrieve all the existing roles. You can't apply filters on this query.
+  """
+  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]
+  user(id: ID!): UsersPermissionsUser
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  me: UsersPermissionsMe
+}
+
+input RoleInput {
+  name: String!
+  description: String
+  type: String
+  permissions: [ID]
+  users: [ID]
+}
+
+input updateDinnermenuInput {
+  where: InputID
+  data: editDinnermenuInput
+}
+
+type updateDinnermenuPayload {
+  dinnermenu: Dinnermenu
+}
+
+input updateHometopimageInput {
+  where: InputID
+  data: editHometopimageInput
+}
+
+type updateHometopimagePayload {
+  hometopimage: Hometopimage
+}
+
+input updateLunchmenuInput {
+  where: InputID
+  data: editLunchmenuInput
+}
+
+type updateLunchmenuPayload {
+  lunchmenu: Lunchmenu
+}
+
+input updateRoleInput {
+  where: InputID
+  data: editRoleInput
+}
+
+type updateRolePayload {
+  role: UsersPermissionsRole
+}
+
+input updateUserInput {
+  where: InputID
+  data: editUserInput
+}
+
+type updateUserPayload {
+  user: UsersPermissionsUser
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type UploadFile {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  name: String!
+  hash: String!
+  sha256: String
+  ext: String
+  mime: String!
+  size: String!
+  url: String!
+  provider: String!
+  public_id: String
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+}
+
+input UserInput {
+  username: String!
+  email: String!
+  provider: String
+  password: String
+  resetPasswordToken: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: ID
+}
+
+type UsersPermissionsMe {
+  _id: ID!
+  username: String!
+  email: String!
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsMeRole
+}
+
+type UsersPermissionsMeRole {
+  _id: ID!
+  name: String!
+  description: String
+  type: String
+}
+
+type UsersPermissionsPermission {
+  id: ID!
+  type: String!
+  controller: String!
+  action: String!
+  enabled: Boolean!
+  policy: String
+  role: UsersPermissionsRole
+}
+
+type UsersPermissionsRole {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+}
+
+type UsersPermissionsUser {
+  id: ID!
+  username: String!
+  email: String!
+  provider: String
+  confirmed: Boolean
+  blocked: Boolean
+  role: UsersPermissionsRole
+}

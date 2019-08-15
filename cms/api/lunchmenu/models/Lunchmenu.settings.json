@@ -16,6 +16,9 @@
     },
     "dishdescription": {
       "type": "text"
+    },
+    "dishprice": {
+      "type": "string"
     }
   }
 }

@@ -3,7 +3,7 @@
   "collectionName": "dinnermenus",
   "info": {
     "name": "dinnermenu",
-    "description": "Here is the dinner menu."
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +16,9 @@
     },
     "description": {
       "type": "text"
+    },
+    "price": {
+      "type": "string"
     }
   }
 }
