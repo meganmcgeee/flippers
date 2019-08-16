@@ -6,20 +6,10 @@ import Layout from '../components/layout'
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <ul>
-      {data.allStrapiDinnermenus.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/${document.node.id}`}>{document.node.dish}</Link>
-          </h2>
-          <p>{document.node.description}</p>
-          <p>{document.node.price}</p>
-        </li>
-      ))}
-    </ul>
-    <Link to="/page-2/">Go to page 2</Link>
+    <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} />
+    <p>
+      {data.allStrapiHomedescriptions.edges[0].node.description_body}
+    </p>
   </Layout>
 )
 
@@ -27,13 +17,19 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiDinnermenus {
+    allStrapiHomedescriptions {
       edges {
         node {
-          id
-          dish
-          description
-          price
+          description_body
+        }
+      }
+    }
+    allStrapiHomedescriptionimages {
+      edges {
+        node {
+          image {
+            publicURL
+          }
         }
       }
     }
