@@ -22,6 +22,7 @@
     "knex": "latest",
     "lodash": "^4.17.5",
     "react": "^16.9.0",
+    "reactstrap": "^8.0.1",
     "sqlite3": "latest",
     "strapi": "3.0.0-alpha.26.2",
     "strapi-hook-bookshelf": "3.0.0-alpha.26.2",
