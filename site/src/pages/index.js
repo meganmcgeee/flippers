@@ -21,6 +21,10 @@ const IndexPage = ({ data }) => (
           </h2>
           <p>{document.node.description}</p>
           <p>{document.node.price}</p>
+         <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} />
+            <p>
+              {data.allStrapiHomedescriptions.edges[0].node.description_body}
+            </p>
         </li>
       ))}
     </ul>
@@ -32,13 +36,19 @@ export default IndexPage
 
 export const pageQuery = graphql`  
   query IndexQuery {
-    allStrapiDinnermenus {
+    allStrapiHomedescriptions {
       edges {
         node {
-          id
-          dish
-          description
-          price
+          description_body
+        }
+      }
+    }
+    allStrapiHomedescriptionimages {
+      edges {
+        node {
+          image {
+            publicURL
+          }
         }
       }
     }

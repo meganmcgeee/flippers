@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/homedescriptionimages",
+      "handler": "Homedescriptionimage.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/homedescriptionimages/count",
+      "handler": "Homedescriptionimage.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/homedescriptionimages/:id",
+      "handler": "Homedescriptionimage.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/homedescriptionimages",
+      "handler": "Homedescriptionimage.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/homedescriptionimages/:id",
+      "handler": "Homedescriptionimage.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/homedescriptionimages/:id",
+      "handler": "Homedescriptionimage.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
