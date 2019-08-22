@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/menuphotobanners",
+      "handler": "Menuphotobanner.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/menuphotobanners/count",
+      "handler": "Menuphotobanner.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/menuphotobanners/:id",
+      "handler": "Menuphotobanner.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/menuphotobanners",
+      "handler": "Menuphotobanner.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/menuphotobanners/:id",
+      "handler": "Menuphotobanner.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/menuphotobanners/:id",
+      "handler": "Menuphotobanner.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

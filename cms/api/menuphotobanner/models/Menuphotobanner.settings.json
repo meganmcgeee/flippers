@@ -1,0 +1,30 @@
+{
+  "connection": "default",
+  "collectionName": "menuphotobanners",
+  "info": {
+    "name": "menuphotobanner",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "image1": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "image3": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    }
+  }
+}

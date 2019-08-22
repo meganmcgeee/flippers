@@ -1,0 +1,18 @@
+{
+  "connection": "default",
+  "collectionName": "homedescriptions",
+  "info": {
+    "name": "homedescription",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "description_body": {
+      "type": "text"
+    }
+  }
+}
