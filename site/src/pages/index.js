@@ -1,8 +1,8 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import Layout from '../components/layout'
-import bgimage from '../images/gatsby-astronaut.png'
+// import bgimage from '../images/gatsby-astronaut.png'
 // import Img from "gatsby-image"
 
 const IndexPage = ({ data }) => (
@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => (
           <p>lorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyun</p>
         </Col>
         <Col>
-          <img /> 
+          <img alt="hi" /> 
           <p>hi</p>
         </Col>
       </Row>
@@ -24,10 +24,10 @@ const IndexPage = ({ data }) => (
     
     
     {/* Here are the new data fields */}
-    {/* <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} />
+    <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} alt="beautiful" />
     <p>
       {data.allStrapiHomedescriptions.edges[0].node.description_body}
-    </p> */}
+    </p>
   </Layout>
 )
 

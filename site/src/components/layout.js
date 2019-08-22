@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // import '../assets/css/style.css';
 
 import Navigation from "./navigation"
-import "./layout.css"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,9 +23,7 @@ const Layout = ({ children }) => {
     <Navigation></Navigation>
       <div>
         <main>{children}</main>
-        <footer>
-          Flippers © {new Date().getFullYear()}
-        </footer>
+    <Footer></Footer>
       </div>
     </>
   )

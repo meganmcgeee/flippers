@@ -3,7 +3,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
-// import SocialFeed from "../components/SocialFeed"
+import SocialFeed from "../components/SocialFeed"
 import SEO from "../components/seo"
 import { Container, Row, Col  } from 'reactstrap';
 const About = ({ data }) => (
@@ -13,26 +13,18 @@ const About = ({ data }) => (
         <Row>
           <Col>
             <h1>Title here</h1>  
-            <p>lorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyun</p>
+            <p>{data.allStrapiAbouttexts.edges[0].node.textblock1}</p>
           </Col>
         </Row>
 
         <Row>
           <Col>
             <h1>Title here</h1>  
-            <p>lorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyunlorem ipsum tasty pancake yyun</p>
+            <p>{data.allStrapiAbouttexts.edges[0].node.textblock2}</p>
           </Col>
         </Row>
       </Container>
-      {/* <SocialFeed></SocialFeed> */}
-      
-      {/* Here are the new data fields */}
-      {/* <p>
-        {data.allStrapiAbouttexts.edges[0].node.textblock1}
-      </p>
-      <p>
-        {data.allStrapiAbouttexts.edges[0].node.textblock2}
-      </p> */}
+      <SocialFeed></SocialFeed>
   </Layout>
 )
 
