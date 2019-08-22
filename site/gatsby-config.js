@@ -21,7 +21,8 @@ module.exports = {
           'Lunchmenus',
           'Dinnermenus',
           'user',
-          'allStrapiLunchmenus'
+          'allStrapiLunchmenus',
+          'allStrapiDinnermenus'
         ],
         queryLimit: 1000,
       },
