@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { Jumbotron, Container, Row, Col  } from 'reactstrap';
+import { graphql, Link } from 'gatsby'
+import { Jumbotron, Container, Row, Col } from 'reactstrap';
 import Layout from '../components/layout'
 import bgimage from '../images/gatsby-astronaut.png'
 // import Img from "gatsby-image"
@@ -22,25 +22,12 @@ const IndexPage = ({ data }) => (
     </Container>
     <Jumbotron fluid style={{ backgroundImage: `url(http://food.baycrews.co.jp/flippers-pancake.jp/images/main.jpg)`, backgroundSize: 'cover' , height: '5em'}}></Jumbotron>
     
-    <Button>Hello I am button</Button>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <ul>
-      {data.allStrapiDinnermenus.edges.map(document => (
-        <li key={document.node.id}>
-          <h2>
-            <Link to={`/${document.node.id}`}>{document.node.dish}</Link>
-          </h2>
-          <p>{document.node.description}</p>
-          <p>{document.node.price}</p>
-         <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} />
-            <p>
-              {data.allStrapiHomedescriptions.edges[0].node.description_body}
-            </p>
-        </li>
-      ))}
-    </ul>
-    <Link to="/page-2/">Go to page 2</Link>
+    
+    {/* Here are the new data fields */}
+    {/* <img src={data.allStrapiHomedescriptionimages.edges[0].node.image.publicURL} />
+    <p>
+      {data.allStrapiHomedescriptions.edges[0].node.description_body}
+    </p> */}
   </Layout>
 )
 
