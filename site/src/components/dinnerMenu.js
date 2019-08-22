@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import SEO from "../components/seo"
+import { Col, Row } from 'reactstrap'
+
 
 const DinnerMenu = () => {
   const data = useStaticQuery(graphql`  
@@ -22,18 +24,22 @@ const DinnerMenu = () => {
     <>
       <SEO title="Dinner" />
       <h1>Dinner</h1>
-      <ul>
+      <Row>
         {data.allStrapiDinnermenus.edges.map(document => (
-          <li key={document.node.id}>
+          <Col key={document.node.id}>
             <h2>
-              {console.log(document)}
-              <Link to={`/${document.node.id}`}>{document.node.dish}</Link>
+            {console.log(document)}
+            <Link to={`/${document.node.id}`}>{document.node.dish}</Link>
             </h2>
             <p>{document.node.description}</p>
+ 
             <p>{document.node.price}</p>
-          </li>
-        ))}
-      </ul>
+          </Col>
+           ))}
+          <Col>.col</Col>
+          
+      
+        </Row>
     </>
   )
 }

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Practice time for flippysite`,
+    title: `Flippers`,
     description: `this is the tech i'm using for the flippers site and tbhI'm so excited for it to have built it on my own<3`,
     author: `@gatsbyjs`,
   },
@@ -20,7 +20,8 @@ module.exports = {
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           'Lunchmenus',
           'Dinnermenus',
-          'user'
+          'user',
+          'allStrapiLunchmenus'
         ],
         queryLimit: 1000,
       },
