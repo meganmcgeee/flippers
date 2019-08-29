@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "allstrapilunchmenus",
+  "info": {
+    "name": "allstrapilunchmenus",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "dishdescription": {
+      "type": "text"
+    },
+    "dish": {
+      "type": "string"
+    },
+    "dishprice": {
+      "type": "decimal"
+    }
+  }
+}

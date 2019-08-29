@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/allstrapilunchmenus",
+      "handler": "Allstrapilunchmenus.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapilunchmenus/count",
+      "handler": "Allstrapilunchmenus.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapilunchmenus/:id",
+      "handler": "Allstrapilunchmenus.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/allstrapilunchmenus",
+      "handler": "Allstrapilunchmenus.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/allstrapilunchmenus/:id",
+      "handler": "Allstrapilunchmenus.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/allstrapilunchmenus/:id",
+      "handler": "Allstrapilunchmenus.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

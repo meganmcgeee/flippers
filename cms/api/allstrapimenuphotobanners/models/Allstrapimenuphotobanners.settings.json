@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "allstrapimenuphotobanners",
+  "info": {
+    "name": "allstrapimenuphotobanners",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "image1": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "image2": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "image3": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

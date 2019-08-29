@@ -14,7 +14,8 @@
     "image": {
       "model": "file",
       "via": "related",
-      "plugin": "upload"
+      "plugin": "upload",
+      "required": true
     }
   }
 }

@@ -1,27 +1,41 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Button, Form, Row, Col, Container, FormGroup, Label, Input, FormText } from 'reactstrap';
 import PropTypes from "prop-types"
 import Layout from "../components/layout"
+import SocialFeed from "../components/SocialFeed"
 
 export default class Contact extends React.Component {
   render() {
     return (
     <Layout>
-      <Form>
-        <FormGroup>
-          <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Text Area</Label>
-          <Input type="textarea" name="text" id="exampleText" />
-        </FormGroup>
-        <Button>Submit</Button>
-      </Form>
+      <Container style={{ margin: '3em'}}>
+        <h1 className="font-weight-bold text-uppercase">Send us a message!</h1>
+        <div className="col-md-12" style={{ borderTop: '5px solid yellow',paddingBottom: '3em' }}></div>
+        <Row>
+          <Col>
+            <Form>
+              <FormGroup>
+                <Label for="exampleEmail">NAME*</Label>
+                <Input type="email" name="name" id="exampleEmail" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword">E-MAIL</Label>
+                <Input type="text" name="email" id="examplePassword" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword">SUBJECT</Label>
+                <Input type="text" name="subject" id="examplePassword"/>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleText">MESSAGE</Label>
+                <Input type="textarea" name="text" id="exampleText" />
+              </FormGroup>
+              <Button className="btn btn-dark btn-lg">SEND</Button>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
+      <SocialFeed></SocialFeed>
     </Layout>
     );
   }

@@ -12,7 +12,9 @@
   },
   "attributes": {
     "description_body": {
-      "type": "text"
+      "type": "text",
+      "unique": true,
+      "required": true
     }
   }
 }

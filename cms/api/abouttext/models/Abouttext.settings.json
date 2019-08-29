@@ -12,10 +12,12 @@
   },
   "attributes": {
     "textblock1": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "textblock2": {
-      "type": "text"
+      "type": "text",
+      "required": true
     }
   }
 }

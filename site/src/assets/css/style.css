@@ -2901,8 +2901,8 @@ input[type="button"].btn-block {
       border-color: transparent; }
   .nav-tabs .nav-link.active,
   .nav-tabs .nav-item.show .nav-link {
-    color: #444;
-    background-color: #fff;
+    /* color: yellow; */
+    /* background-color: #fff; */
     border-color: #999 #999 #fff; }
   .nav-tabs .dropdown-menu {
     margin-top: -1px;
@@ -2998,6 +2998,16 @@ input[type="button"].btn-block {
   content: "";
   background: no-repeat center center;
   background-size: 100% 100%; }
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
 
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
@@ -9767,16 +9777,16 @@ a.text-rss:hover, a.text-rss:focus {
   flex: 0 0 20% !important;
   width: 20% !important; }
 
-@font-face {
+/* @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?q2xewv");
   src: url("../fonts/icomoon.eot?q2xewv#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?q2xewv") format("truetype"), url("../fonts/icomoon.woff?q2xewv") format("woff"), url("../fonts/icomoon.svg?q2xewv#icomoon") format("svg");
   font-weight: normal;
-  font-style: normal; }
+  font-style: normal; } */
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  /* font-family: 'icomoon' !important; */
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -16353,7 +16363,7 @@ footer {
     padding: .5rem 0; }
     .navbar-nav .nav-item .btn {
       display: block;
-      background-color: #4829B2;
+      /* background-color: #4829B2; */
       color: #fff; } }
 
 .overlay-active .headroom {

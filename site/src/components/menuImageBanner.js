@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
+import { Container, Row, Col  } from 'reactstrap';
 
 const MenuImageBanner = () => {
   const data = useStaticQuery(graphql`  
@@ -23,11 +24,13 @@ const MenuImageBanner = () => {
 
   return (
     <>
-    <div>
-      <img src={data.allStrapiMenuphotobanners.edges[0].node.image1.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious" />
-      <img src={data.allStrapiMenuphotobanners.edges[0].node.image2.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious"/>
-      <img src={data.allStrapiMenuphotobanners.edges[0].node.image3.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious"/>
-    </div>
+    <Container>
+      <Row className="text-center">
+        <Col><img src={data.allStrapiMenuphotobanners.edges[0].node.image1.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious" /></Col>
+        <Col><img src={data.allStrapiMenuphotobanners.edges[0].node.image2.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious"/></Col>
+        <Col><img src={data.allStrapiMenuphotobanners.edges[0].node.image3.publicURL} style={{ height: "200px", width: "200px"}} alt="tasty delicious"/></Col>
+      </Row>
+    </Container>
     </>
   )
 }

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/allstrapimenuphotobanners",
+      "handler": "Allstrapimenuphotobanners.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapimenuphotobanners/count",
+      "handler": "Allstrapimenuphotobanners.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapimenuphotobanners/:id",
+      "handler": "Allstrapimenuphotobanners.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/allstrapimenuphotobanners",
+      "handler": "Allstrapimenuphotobanners.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/allstrapimenuphotobanners/:id",
+      "handler": "Allstrapimenuphotobanners.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/allstrapimenuphotobanners/:id",
+      "handler": "Allstrapimenuphotobanners.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -2,13 +2,54 @@ type Abouttext {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  textblock1: String
-  textblock2: String
+  textblock1: String!
+  textblock2: String!
 }
 
 input AbouttextInput {
-  textblock1: String
-  textblock2: String
+  textblock1: String!
+  textblock2: String!
+}
+
+type Allstrapihomedescriptionimages {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  image: UploadFile
+}
+
+input AllstrapihomedescriptionimagesInput {
+  image: ID
+}
+
+type Allstrapilunchmenus {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  dishdescription: String
+  dish: String
+  dishprice: Float
+}
+
+input AllstrapilunchmenusInput {
+  dishdescription: String
+  dish: String
+  dishprice: Float
+}
+
+type Allstrapimenuphotobanners {
+  id: ID!
+  created_at: DateTime!
+  updated_at: DateTime!
+  image1: UploadFile
+  image2: UploadFile
+  image3: UploadFile
+}
+
+input AllstrapimenuphotobannersInput {
+  image1: ID
+  image2: ID
+  image3: ID
 }
 
 input createAbouttextInput {
@@ -17,6 +58,30 @@ input createAbouttextInput {
 
 type createAbouttextPayload {
   abouttext: Abouttext
+}
+
+input createAllstrapihomedescriptionimagesInput {
+  data: AllstrapihomedescriptionimagesInput
+}
+
+type createAllstrapihomedescriptionimagesPayload {
+  allstrapihomedescriptionimage: Allstrapihomedescriptionimages
+}
+
+input createAllstrapilunchmenusInput {
+  data: AllstrapilunchmenusInput
+}
+
+type createAllstrapilunchmenusPayload {
+  allstrapilunchmenu: Allstrapilunchmenus
+}
+
+input createAllstrapimenuphotobannersInput {
+  data: AllstrapimenuphotobannersInput
+}
+
+type createAllstrapimenuphotobannersPayload {
+  allstrapimenuphotobanner: Allstrapimenuphotobanners
 }
 
 input createDinnermenuInput {
@@ -94,6 +159,30 @@ input deleteAbouttextInput {
 
 type deleteAbouttextPayload {
   abouttext: Abouttext
+}
+
+input deleteAllstrapihomedescriptionimagesInput {
+  where: InputID
+}
+
+type deleteAllstrapihomedescriptionimagesPayload {
+  allstrapihomedescriptionimage: Allstrapihomedescriptionimages
+}
+
+input deleteAllstrapilunchmenusInput {
+  where: InputID
+}
+
+type deleteAllstrapilunchmenusPayload {
+  allstrapilunchmenu: Allstrapilunchmenus
+}
+
+input deleteAllstrapimenuphotobannersInput {
+  where: InputID
+}
+
+type deleteAllstrapimenuphotobannersPayload {
+  allstrapimenuphotobanner: Allstrapimenuphotobanners
 }
 
 input deleteDinnermenuInput {
@@ -180,6 +269,22 @@ input editAbouttextInput {
   textblock2: String
 }
 
+input editAllstrapihomedescriptionimagesInput {
+  image: ID
+}
+
+input editAllstrapilunchmenusInput {
+  dishdescription: String
+  dish: String
+  dishprice: Float
+}
+
+input editAllstrapimenuphotobannersInput {
+  image1: ID
+  image2: ID
+  image3: ID
+}
+
 input editDinnermenuInput {
   dish: String
   description: String
@@ -259,7 +364,7 @@ type Homedescription {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  description_body: String
+  description_body: String!
 }
 
 type Homedescriptionimage {
@@ -274,7 +379,7 @@ input HomedescriptionimageInput {
 }
 
 input HomedescriptionInput {
-  description_body: String
+  description_body: String!
 }
 
 """This is the main image on the home page"""
@@ -332,12 +437,21 @@ input MenuphotobannerInput {
   image3: ID
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Abouttext | createAbouttextPayload | updateAbouttextPayload | deleteAbouttextPayload | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Homedescriptionimage | createHomedescriptionimagePayload | updateHomedescriptionimagePayload | deleteHomedescriptionimagePayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Abouttext | createAbouttextPayload | updateAbouttextPayload | deleteAbouttextPayload | Allstrapihomedescriptionimages | createAllstrapihomedescriptionimagesPayload | updateAllstrapihomedescriptionimagesPayload | deleteAllstrapihomedescriptionimagesPayload | Allstrapilunchmenus | createAllstrapilunchmenusPayload | updateAllstrapilunchmenusPayload | deleteAllstrapilunchmenusPayload | Allstrapimenuphotobanners | createAllstrapimenuphotobannersPayload | updateAllstrapimenuphotobannersPayload | deleteAllstrapimenuphotobannersPayload | Dinnermenu | createDinnermenuPayload | updateDinnermenuPayload | deleteDinnermenuPayload | Homedescription | createHomedescriptionPayload | updateHomedescriptionPayload | deleteHomedescriptionPayload | Homedescriptionimage | createHomedescriptionimagePayload | updateHomedescriptionimagePayload | deleteHomedescriptionimagePayload | Hometopimage | createHometopimagePayload | updateHometopimagePayload | deleteHometopimagePayload | Lunchmenu | createLunchmenuPayload | updateLunchmenuPayload | deleteLunchmenuPayload | Menuphotobanner | createMenuphotobannerPayload | updateMenuphotobannerPayload | deleteMenuphotobannerPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload
 
 type Mutation {
   createAbouttext(input: createAbouttextInput): createAbouttextPayload
   updateAbouttext(input: updateAbouttextInput): updateAbouttextPayload
   deleteAbouttext(input: deleteAbouttextInput): deleteAbouttextPayload
+  createAllstrapihomedescriptionimages(input: createAllstrapihomedescriptionimagesInput): createAllstrapihomedescriptionimagesPayload
+  updateAllstrapihomedescriptionimages(input: updateAllstrapihomedescriptionimagesInput): updateAllstrapihomedescriptionimagesPayload
+  deleteAllstrapihomedescriptionimages(input: deleteAllstrapihomedescriptionimagesInput): deleteAllstrapihomedescriptionimagesPayload
+  createAllstrapilunchmenus(input: createAllstrapilunchmenusInput): createAllstrapilunchmenusPayload
+  updateAllstrapilunchmenus(input: updateAllstrapilunchmenusInput): updateAllstrapilunchmenusPayload
+  deleteAllstrapilunchmenus(input: deleteAllstrapilunchmenusInput): deleteAllstrapilunchmenusPayload
+  createAllstrapimenuphotobanners(input: createAllstrapimenuphotobannersInput): createAllstrapimenuphotobannersPayload
+  updateAllstrapimenuphotobanners(input: updateAllstrapimenuphotobannersInput): updateAllstrapimenuphotobannersPayload
+  deleteAllstrapimenuphotobanners(input: deleteAllstrapimenuphotobannersInput): deleteAllstrapimenuphotobannersPayload
   createDinnermenu(input: createDinnermenuInput): createDinnermenuPayload
   updateDinnermenu(input: updateDinnermenuInput): updateDinnermenuPayload
   deleteDinnermenu(input: deleteDinnermenuInput): deleteDinnermenuPayload
@@ -380,6 +494,12 @@ type Mutation {
 type Query {
   abouttext(id: ID!): Abouttext
   abouttexts(sort: String, limit: Int, start: Int, where: JSON): [Abouttext]
+  allstrapihomedescriptionimage(id: ID!): Allstrapihomedescriptionimages
+  allstrapihomedescriptionimages(sort: String, limit: Int, start: Int, where: JSON): [Allstrapihomedescriptionimages]
+  allstrapilunchmenu(id: ID!): Allstrapilunchmenus
+  allstrapilunchmenus(sort: String, limit: Int, start: Int, where: JSON): [Allstrapilunchmenus]
+  allstrapimenuphotobanner(id: ID!): Allstrapimenuphotobanners
+  allstrapimenuphotobanners(sort: String, limit: Int, start: Int, where: JSON): [Allstrapimenuphotobanners]
   dinnermenu(id: ID!): Dinnermenu
   dinnermenus(sort: String, limit: Int, start: Int, where: JSON): [Dinnermenu]
   homedescription(id: ID!): Homedescription
@@ -419,6 +539,33 @@ input updateAbouttextInput {
 
 type updateAbouttextPayload {
   abouttext: Abouttext
+}
+
+input updateAllstrapihomedescriptionimagesInput {
+  where: InputID
+  data: editAllstrapihomedescriptionimagesInput
+}
+
+type updateAllstrapihomedescriptionimagesPayload {
+  allstrapihomedescriptionimage: Allstrapihomedescriptionimages
+}
+
+input updateAllstrapilunchmenusInput {
+  where: InputID
+  data: editAllstrapilunchmenusInput
+}
+
+type updateAllstrapilunchmenusPayload {
+  allstrapilunchmenu: Allstrapilunchmenus
+}
+
+input updateAllstrapimenuphotobannersInput {
+  where: InputID
+  data: editAllstrapimenuphotobannersInput
+}
+
+type updateAllstrapimenuphotobannersPayload {
+  allstrapimenuphotobanner: Allstrapimenuphotobanners
 }
 
 input updateDinnermenuInput {

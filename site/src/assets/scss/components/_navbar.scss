@@ -6,6 +6,7 @@
 .navbar {
 	padding-left: 0;
 	padding-right: 0;
+	background-color: none;
 }
 
 .navbar-brand {
@@ -68,18 +69,20 @@
 
 			.nav-link {
 				padding: 5px 0;
-				color: $body-color;
+				color: $white;
 
 				&:focus,
 				&:hover {
-					color: $black;
+					color: $yellow;
+					font-style: bold;
 				}
 			}
 
 			&.show,
 			&.active {
 				.nav-link {
-					color: $black;
+					color: $yellow;
+					font-style: bold;
 				}
 			}
 		}

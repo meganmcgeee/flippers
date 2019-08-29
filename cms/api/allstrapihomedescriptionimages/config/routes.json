@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/allstrapihomedescriptionimages",
+      "handler": "Allstrapihomedescriptionimages.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapihomedescriptionimages/count",
+      "handler": "Allstrapihomedescriptionimages.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/allstrapihomedescriptionimages/:id",
+      "handler": "Allstrapihomedescriptionimages.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/allstrapihomedescriptionimages",
+      "handler": "Allstrapihomedescriptionimages.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/allstrapihomedescriptionimages/:id",
+      "handler": "Allstrapihomedescriptionimages.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/allstrapihomedescriptionimages/:id",
+      "handler": "Allstrapihomedescriptionimages.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
