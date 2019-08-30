@@ -28,19 +28,19 @@ const lunchMenu = () => {
           {data.allStrapiLunchmenus.edges.map(document => (
             
             <Row key={document.node.id}>
-              <Col>
+              <Col sm="12">
                 <h3 className="font-weight-bold text-uppercase" to={`/${document.node.id}`}>{document.node.dish}</h3><br></br>
                 {document.node.dishdescription}
               </Col>
-              <Col>${document.node.dishprice}</Col>
+              <Col sm="12">${document.node.dishprice}</Col>
               <Col>
               <img src={ require("../assets/images/forkleft.png") }  alt="Logo"></img>
               </Col>
-              <Col>
+              <Col sm="12">
                 <h3 className="font-weight-bold text-uppercase" to={`/${document.node.id}`}>{document.node.dish}</h3><br></br>
                 {document.node.dishdescription}
               </Col>
-              <Col>${document.node.dishprice}</Col>
+              <Col sm="12">${document.node.dishprice}</Col>
             </Row>
           ))}
         </Container>

@@ -6,7 +6,7 @@ const Footer = ({ siteTitle }) => (
     <div className="container">
     <div className="row">
         <div className="col text-center">
-            <img src={ require("../assets/images/Flippers_White_600px.png") }  alt="Logo"></img>
+            <img src={ require("../assets/images/Flippers_White_600px.png") }  alt="Logo" style={{ width: '300px'}}></img>
         <p>Flippers, Copyright 2019</p>
         </div>
     </div>

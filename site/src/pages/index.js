@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Jumbotron, Container, Row, Col } from 'reactstrap';
 
 import NavigationHome from '../components/navigationhome'
@@ -8,13 +8,12 @@ import SocialFeed from '../components/socialfeed'
 import Footer from '../components/footer'
 
 const IndexPage = ({ data }) => (
-  <div>
+  <div style={{padding: '0'}}>
     <NavigationHome></NavigationHome>
-    <section className="p-0"
-      data-top-top="transform: translateY(0px);" 
-      data-top-bottom="transform: translateY(200px);">
-      <Jumbotron className="vh-100" fluid style={{ backgroundImage: `url(http://food.baycrews.co.jp/flippers-pancake.jp/images/main.jpg)`, backgroundSize: 'cover' , height: '5em'}}></Jumbotron>
-    </section>
+    <div className="mx-auto text-center">    
+      <section style={{ backgroundImage: `url(http://food.baycrews.co.jp/flippers-pancake.jp/images/main.jpg)`, backgroundSize: 'cover' , height: '5em', height: '100vh',   marginTop: '-180px'}}>
+      </section>
+    </div>
 
     <Container>
       <Row>

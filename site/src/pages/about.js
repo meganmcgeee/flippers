@@ -5,18 +5,19 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SocialFeed from "../components/SocialFeed"
 import SEO from "../components/seo"
-import { Container, Row, Col  } from 'reactstrap';
+import { Row, Col, Container  } from 'reactstrap';
 const About = ({ data }) => (
   <Layout>
     <SEO title="About" />
-    <Container style={{ margin: '3em'}}>
+      <Container style={{ margin: '2em 1em 0'}}>
         <Row>
           <Col>
             <h1 className="font-weight-bold">WHAT IS FLIPPER'S?</h1>  
             <div className="col-md-12" style={{ borderTop: '5px solid yellow',paddingBottom: '3em' }}></div>
             <p>{data.allStrapiAbouttexts.edges[0].node.textblock1}</p>
             <div className="text-center" >
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/JxmVCXWQr9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+             
+              <iframe style={{ maxWidth: '50em'}} width="460" height="315" src="https://www.youtube.com/embed/JxmVCXWQr9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             
           </Col>
@@ -33,11 +34,11 @@ const About = ({ data }) => (
             <p>{data.allStrapiAbouttexts.edges[0].node.textblock2}</p>
           </Col>
         </Row>
+        </Container>
         <div className="col-md-12 text-center">
           <img  src={ require("../assets/images/eggs.png") }  alt="eggs"></img>
         </div>
         <div className="col-md-12 text-center" style={{ borderTop: '5px solid yellow'}}></div>
-      </Container>
       <SocialFeed></SocialFeed>
   </Layout>
 )

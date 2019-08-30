@@ -12,22 +12,22 @@ export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.state = {
-      collapsed: true
+      isOpen: false
     };
   }
 
-  toggleNavbar() {
+  toggle() {
     this.setState({
-      collapsed: !this.state.collapsed
+      isOpen: !this.state.isOpen
     });
   }
   render() {
     return (
-      <div>
+      <div style={{ margin: '0'}}>
           <Navbar color="dark" light expand="md">
-            <NavbarBrand src={ require("../assets/images/Flippers_Black_300px.png") }  alt="Logo" href="/"></NavbarBrand>
+          <NavbarBrand href="/"><img src={ require("../assets/images/Flippers_White_600px.png") }  alt="Logo" style={{ width: '300px'}}></img></NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>

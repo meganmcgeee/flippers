@@ -8,12 +8,12 @@ export default class Contact extends React.Component {
   render() {
     return (
     <Layout>
-      <Container style={{ margin: '3em'}}>
+      <Container style={{ margin: '2em 1em 0'}}>
         <h1 className="font-weight-bold text-uppercase">Send us a message!</h1>
-        <div className="col-md-12" style={{ borderTop: '5px solid yellow',paddingBottom: '3em' }}></div>
+        <div className="col-md-12" style={{ borderTop: '5px solid yellow',paddingBottom: '3em', width: '500px'}}></div>
         <Row>
           <Col>
-            <Form>
+            <Form style={{ width: '50em'}}>
               <FormGroup>
                 <Label for="exampleEmail">NAME*</Label>
                 <Input type="email" name="name" id="exampleEmail" />

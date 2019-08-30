@@ -8,8 +8,7 @@ import { Container, Row, Col, Button  } from 'reactstrap';
 const Locations = () => (
   <Layout>
     <SEO title="Locations" />
-    <Container style={{ margin: '3em'}}>
-      <Row>
+      <Row style={{ paddingTop: '3em'}}>
         <Col>
           <h1 className="font-weight-bold text-uppercase">NEW YORK</h1>
           <div className="col-md-6" style={{ borderTop: '5px solid yellow' }}></div>
@@ -26,7 +25,6 @@ const Locations = () => (
           <Button className="btn btn-dark btn-lg" href="/menus">SEE  MENU</Button>
           </Col>
         </Row>
-      </Container>
     <SocialFeed></SocialFeed>
   </Layout>
 )

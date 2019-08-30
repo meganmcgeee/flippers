@@ -8,10 +8,12 @@ import Container from 'reactstrap'
 
 const Menu = ({ data }) => (
   <Layout>
-    <SEO title="Flippers Menu" />
-      <LunchMenu></LunchMenu>
-      <MenuImageBanner></MenuImageBanner>
-      <DinnerMenu></DinnerMenu>
+    <Container style={{ margin: '2em 1em 0'}}>
+      <SEO title="Flipper's Menu" />
+        <LunchMenu></LunchMenu>
+        <MenuImageBanner></MenuImageBanner>
+        <DinnerMenu></DinnerMenu>
+      </Container>
   </Layout>
 )
 

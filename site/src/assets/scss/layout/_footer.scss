@@ -4,15 +4,15 @@
 //
 
 footer {
-	padding: 0!important;
+	// padding: 0!important;
 
 	> [class*="container"] {
-		padding-top: 6.25rem;
-		padding-bottom: 6.25rem;
+		// padding-top: 3.25rem;
+		// padding-bottom: 3.25rem;
 
-		+ [class*="container"] {
-			margin-top: 0;
-		}
+		// + [class*="container"] {
+		// 	margin-top: 0;
+		// }
 	}
 
 	.nav {

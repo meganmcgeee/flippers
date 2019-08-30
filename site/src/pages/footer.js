@@ -2,14 +2,12 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Footer = ({ siteTitle }) => (
-<footer className="bg-dark">
-    <div className="container">
-    <div className="row">
-        <div className="col text-center">
-            <img className="navbar-logo navbar-logo-light" src={ require("../assets/images/Flippers_White_600px.png") }  alt="Logo"></img>
-        <p>Flippers, Copyright 2019</p>
+<footer style={{ paddingTop: '0',marginLeft: '0', marginRight: '0' }} className="bg-dark">
+    <div className="row" style={{ paddingTop: '0 !important'}}>
+        <div className="col text-center" style={{ paddingTop: '0 !important'}}>
+        <img className="navbar-logo navbar-logo-light" src={ require("../assets/images/Flippers_White_600px.png") }  alt="Logo"></img>
+        <p>Flipper's, Copyright 2019</p>
         </div>
-    </div>
     </div>
 </footer>
 )
